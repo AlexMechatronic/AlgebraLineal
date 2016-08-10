@@ -54,6 +54,10 @@ Quaternion multScal_Q(float scalar, Quaternion q)
 	return q;
 }
 
+float norm_Q(Quaternion q) //obtiene la normal del cuaternion
+{
+	return sqrt(q.w*q.w + q.x*q.x + q.y*q.y + q.z*q.z);
+}
 /////////////////OPERACIONES CON ANGULOS DE EULER///////////////
 EulerAngles getEulerAngles(Quaternion q)
 {
@@ -71,8 +75,13 @@ float radiansToDegrees (float radians)
 
 
 ////////////////////////OPERACIONES CON VECTORES//////////////////
+Vector norm_V(Vector v) //obtiene la normal del vector
+{
+	return sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+}
 
 
+//////////EXTRA///////
 float map(dataRaw, in_min, in_max, out_min, out_max)
 {
 	return = (dataRaw - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;	
